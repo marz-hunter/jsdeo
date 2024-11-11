@@ -57,10 +57,10 @@ def process_domain(domain, proxy):
     cekjs_cmd = f"python3 cjs.py -f {domain_dir}/urohttpx.txt -t 10"
     run_command(cekjs_cmd, cwd=domain_dir)
     
-    LinkFinderhtml_cmd= f"python3 linkfinder.py -i '{domain_dir}/jsdeobfuscator/*.js' -o {domain_dir}/linkfinder.html"
+    LinkFinderhtml_cmd= f"python3 LinkFinder/linkfinder.py -i '{domain_dir}/jsdeobfuscator/*.js' -o {domain_dir}/linkfinder.html"
     run_command(LinkFinderhtml_cmd)
 
-    LinkFindercli_cmd= f"python3 linkfinder.py -i '{domain_dir}/jsdeobfuscator/*.js' -o cli | tee {domain_dir}/linkfinder.txt"
+    LinkFindercli_cmd= f"python3 LinkFinder/linkfinder.py -i '{domain_dir}/jsdeobfuscator/*.js' -o cli | tee {domain_dir}/linkfinder.txt"
     run_command(LinkFindercli_cmd)
     
     # 8. Pilih port acak untuk HTTP server
