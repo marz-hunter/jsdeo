@@ -5,6 +5,8 @@ git clone https://github.com/marz-hunter/jsdeo.git
 
 cd jsdeo
 
+pip3 install waymore
+
 npm install -g js-deobfuscator
 
 pdtm -i katana,httpx
